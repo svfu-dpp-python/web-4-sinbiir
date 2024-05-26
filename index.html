@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='script.js'>
+
+    </script>
+</head>
+<body>
+    
+    <div>
+        <form id="opros">
+        <fieldset>
+            <legend>Столица Франции</legend>
+          
+            <div>
+              <input type="radio" id="bruce" name="Paris" value="0" checked />
+              <label for="bruce">Брюссель</label>
+            
+              <input type="radio" id="pari" name="Paris" value="1" />
+              <label for="pari">Париж</label>
+            
+              <input type="radio" id="madri" name="Paris" value="0" />
+              <label for="madri">Мадрид</label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Столица Индии</legend>
+          
+            <div>
+              <input type="radio" id="mumba" name="India" value="0" checked />
+              <label for="mumba">Мумбаи</label>
+            
+              <input type="radio" id="deli" name="India" value="0" />
+              <label for="deli">Дели</label>
+            
+              <input type="radio" id="new-deli" name="India" value="1" />
+              <label for="new-deli">Нью-Дели</label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Столица Южной Кореи</legend>
+          
+            <div>
+              <input type="radio" id="phen" name="Korea" value="0" checked />
+              <label for="phen">Пхеньян</label>
+            
+              <input type="radio" id="pekin" name="Korea" value="0" />
+              <label for="pekin">Пекин</label>
+            
+              <input type="radio" id="seul" name="Korea" value="1" />
+              <label for="seul">Сеул</label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Столица Турции</legend>
+          
+            <div>
+              <input type="radio" id="stambul" name="Turkey" value="1" checked />
+              <label for="stambul">Стамбул</label>
+            
+              <input type="radio" id="bagdad" name="Turkey" value="0" />
+              <label for="bagdad">Багдад</label>
+            
+              <input type="radio" id="ankara" name="Turkey" value="0" />
+              <label for="ankara">Анкара</label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Столица ЮАР</legend>
+          
+            <div>
+              <input type="radio" id="yoha" name="UAR" value="0" checked />
+              <label for="yoha">Йоханнесбург</label>
+            
+              <input type="radio" id="keip" name="UAR" value="1" />
+              <label for="keip">Кейптаун</label>
+            
+              <input type="radio" id="preton" name="UAR" value="0" />
+              <label for="preton">Претория</label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Столица Сирии</legend>
+          
+            <div>
+              <input type="radio" id="damask" name="Syria" value="1" checked />
+              <label for="damask">Дамаск</label>
+            
+              <input type="radio" id="tegeran" name="Syria" value="0" />
+              <label for="tegeran">Тегеран</label>
+            
+              <input type="radio" id="beirut" name="Syria" value="0" />
+              <label for="beirut">Бейрут</label>
+            </div>
+        </fieldset>
+          
+        <div class="btn">
+            <button type="submit">Подтвердить</button>
+        </div>
+        </form>
+    </div>
+
+</body>
+</html>
+
+
+
+
+<script>
+    document.getElementById("opros").addEventListener("submit", function (e) {
+        e.preventDefault();
+      
+        const data = new FormData(e.target);
+        let count = 0;
+
+        let array = [data.get("Paris"), data.get("India"), data.get("Korea"),data.get("Turkey"),data.get("UAR"),data.get("Syria")]
+
+        for (let i = 0; i < array.length; i++) {
+          const element = array[i];
+          count += parseInt(element);
+        }
+        alert(count)
+      });
+</script>
